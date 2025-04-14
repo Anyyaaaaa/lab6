@@ -1,15 +1,24 @@
-const { src, dest, watch, series } = require('gulp');
+const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const browserSync = require('browser-sync').create();
 
-function styles() {
-    console.log('Running styles task...');
-    return src('src/scss/**/*.scss')
+
+gulp.task('styles', function () {
+    return gulp.src('src/scss/style.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(dest('dist/css'));
-}
+        .pipe(gulp.dest('src/css'))
+        .pipe(browserSync.stream()); // оновлення стилів без повного перезавантаження
+});
 
-function watcher() {
-    watch('src/scss/**/*.scss', styles);
-}
+gulp.task('watcher', function () {
+    browserSync.init({
+        server: {
+            baseDir: './'
+        }
+    });
 
-exports.default = series(styles, watcher);
+    gulp.watch('src/scss/**/*.scss', gulp.series('styles'));
+    gulp.watch('*.html').on('change', browserSync.reload);
+});
+
+gulp.task('default', gulp.series('styles', 'watcher'));
