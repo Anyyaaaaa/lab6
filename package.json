@@ -2,7 +2,9 @@
   "devDependencies": {
     "browser-sync": "^3.0.4",
     "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
     "sass": "^1.86.3"
   },
   "name": "lab6",
