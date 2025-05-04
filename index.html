@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="dist/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Flipkart</title>
 </head>
 <header class="header">
@@ -20,14 +21,543 @@
             <option>Electronics</option>
             <option>Fashion</option>
             <option>Home</option>
-            <!-- додайте інші категорії тут -->
         </select>
+        <img src="img/arrow.png" alt="arrow" class="dropdown-icon">
         <input type="text" class="search-input" placeholder="Search Product, Brands and more...">
         <i class="fas fa-search search-icon"></i>
+    </div>
+
+    <div class="header-actions">
+        <div class="cart">
+            <img src="img/cart.png" alt="Cart">
+            <span class="cart-count">5</span>
+            <div class="cart-text">
+                <span>Cart</span>
+                <strong>$240</strong>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="account">
+            <img src="img/user.png" alt="Account">
+            <div class="account-text">
+                <span>ACCOUNT</span>
+                <strong>Sign in</strong>
+            </div>
+        </div>
     </div>
 </header>
 
 <body>
+
+<nav class="menu-bar">
+    <div class="menu-item active">
+        <img src="img/star.png" alt="Top Offers" class="menu-icon" />
+        <span>Top Offers</span>
+    </div>
+    <div class="menu-item">
+        <img src="img/food.png" alt="Grocery" class="menu-icon" />
+        <span>Grocery</span>
+    </div>
+    <div class="menu-item">
+        <img src="img/mobile-phone.png" alt="Mobiles" class="menu-icon" />
+        <span>Mobiles</span>
+    </div>
+    <div class="menu-item">
+        <img src="img/sofa.png" alt="Home" class="menu-icon" />
+        <span>Home</span>
+    </div>
+    <div class="menu-item">
+        <img src="img/responsive.png" alt="Electronics" class="menu-icon" />
+        <span>Electronics</span>
+    </div>
+    <div class="menu-item">
+        <img src="img/shoe.png" alt="Fashion" class="menu-icon" />
+        <span>Fashion</span>
+    </div>
+    <div class="menu-item">
+        <img src="img/makeup.png" alt="Beauty" class="menu-icon" />
+        <span>Beauty & Accessories</span>
+    </div>
+</nav>
+
+
+<script>
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('click', () => {
+            document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+        });
+    });
+</script>
+
+<section id="topOffers">
+    <div class="promo-grid">
+        <div class="promo-card pink bike-card">
+            <h2><span class="h2_bike">Lifelong Tribe 20T</span></h2>
+            <div class="p_bike">
+            <p >Matte Black And Fluorescent yellow 20 T</p>
+                <p>Road Cycle (Single Speed, Black</p>
+            </div>
+            <p class="prices"><span class="old-prices">₹5,000</span> <span style="font-weight: bold">From </span><span class="new-prices">₹2,000*</span></p>
+            <button class="btn red">Buy Now</button>
+            <img src="img/bike.png" class="bike-img" />
+            <img src="img/Ellipse%205.png" class="eclips">
+        </div>
+
+        <div class="promo-card blue">
+            <div class="badge">50% Discount</div>
+            <div class="h2_phonecard"><h2>iphone 14</h2></div>
+            <div class="p_phoneCard"><p>Now Available on </p>
+            <p>affordable price</p></div>
+            <p class="pricesd"><span class="old-prices">₹1,00,000</span> <span style="color: #8b8b8b">From </span><span class="new-prices">₹99,500*</span></p>
+            <button class="btn">Buy Now</button>
+            <img src="img/phone.png" class="product-img" />
+        </div>
+
+        <div class="promo-card purple tv-card">
+            <div class="tv-overlay"></div>
+            <div class="tv-content">
+                <span class = "h3_tv"><h3>Ultra HD 4K TVs</h3></span>
+                <p class="highlight"><span class="from">From</span> <span class="new">₹5,000*</span></p>
+                <div class="p_tvCard">
+                <p>Sony, Samsung, LG and </p>
+                <p>more. Instant 10% Offer on </p>
+                        <p>CitiBank</p>
+                </div>
+            </div>
+            <img src="img/hd.png" class="tv-img" />
+        </div>
+    </div>
+</section>
+
+
+<section id="FeatureProducts">
+    <h3 class="FeatureProductText">Feature Product</h3>
+    <div class="main-container">
+    <div class="ad-banner">
+        <img src="img/fur.png" alt="Furniture" class="background-img">
+        <div class="label">FURNITURE</div>
+        <div class="text">
+            Create your own<br>
+            space with <span class="highlight2">Flipkart</span><br>
+            Furniture
+        </div>
+        <div class="price-tag">From ₹1,200</div>
+    </div>
+
+    <div class="products">
+        <div class="card yellow">
+            <img class="camera"src="img/camera.png" alt="Camera">
+            <div class="pricess">₹23,000</div>
+            <p style="font-weight: bold">NIKON DSLR Camera</p>
+        </div>
+
+        <div class="card blue">
+            <img class="headphone"src="img/head.png" alt="Headphones">
+            <div class="pricess">₹1,200</div>
+            <p style="font-weight: bold">NIKON DSLR Camera</p>
+        </div>
+
+        <div class="card pink">
+            <img class="bed"src="img/bed.png" alt="Bed">
+            <div class="pricess">₹25,000</div>
+            <div class="textbed">
+            <p>Mj Furniture Bed </p>
+                <p>with 4 Drawer</p>
+        </div>
+        </div>
+
+        <div class="card green">
+            <img class="cooker" src="img/castr.png" alt="Cooker">
+            <div class="pricess">₹2,900</div>
+            <p style="font-weight: bold">Cooker Aluminium</p>
+        </div>
+
+        <div class="card wide blue-light">
+            <div class="info">
+                <h3 class="wachtexth3">Samsung Washing Machine</h3>
+                <div class="washtextP">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel eros,</p>
+                    <p>sollicitudin a nulla.</p></div>
+                <div class="price-large">₹60,000</div>
+            </div>
+            <img class="wash" src="img/wash.png" alt="Washing Machine">
+        </div>
+    </div>
+    </div>
+</section>
+
+<section id="Products">
+    <h3 class="ProductsText">Last View Product</h3>
+
+    <div class="prod">
+        <div class="cards green">
+            <div class="rating">4.2</div>
+            <img class="women" src="img/girl.png" alt="Product 1" />
+            <div class="info">
+                <p class="sponsored">Sponsored</p>
+                <div class="title">
+                <p>STREE MANTRA Women</p>
+                  <p>Printed Georgette, Crepe</p>
+                   <p> A-line Kurta Grey</p></div>
+                <p class="price">₹599 </p>
+                <p> <span class="old-price">₹1,699</span> <span class="discount">65% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards peach">
+            <div class="rating">3.7</div>
+            <img class="shoes" src="img/crosu.png" alt="Shoes" />
+            <div class="info">
+                <p class="sponsored">BIRDE</p>
+                <div class="title">
+                    <p>Premium Casual Shoes For</p>
+                    <p>Men Casuals For Men (Grey)</p></div>
+                <p class="pri">₹350</p>
+                    <p><span class="old-pric">₹499</span> <span class="discount">35% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards grey">
+            <div class="rating">4.2</div>
+            <img class="headphones" src="img/eadphones.png" alt="Earbuds" />
+            <div class="info">
+                <p class="sponsored">Oppo</p>
+                <p class="title">OPPO Enco Buds 2 with 28 hours Battery life & Deep Noise</p>
+                <p class="pr">₹1,799 </p>
+                    <p><span class="old-price">₹3,999</span> <span class="discount">55% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards yellow">
+            <div class="rating">4.1</div>
+            <img class="chairs" src="img/chair.png" alt="Chair" />
+            <div class="info">
+                <p class="sponsored">Furniture</p>
+                <div class="title">
+                <p>Nice Furniture Leatherette</p>
+                    <p>Office Arm Chair (Black, DIY</p>
+                    <p>(Do-It-Yourself))</p></div>
+                <p class="price">₹6,367</p>
+                   <p> <span class="old-price">₹12,000</span> <span class="discount">46% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards light-pink">
+            <div class="rating">5.1</div>
+            <img class="termos" src="img/termos.png" alt="Flask" />
+            <div class="info">
+                <p class="sponsored">LeaFox</p>
+                <div class="title">
+                <p>LeaFox Vacuum Flask Set 3Cup &</p>
+                   <p> Bottle set for Hot & Cold Drink,</p>
+                    <p>Random Color 500 ml</p></div>
+                <p class="price">₹499 </p>
+                   <p> <span class="old-price">₹1,099</span> <span class="discount">54% off</span></p>
+            </div>
+        </div>
+        <p class="view-more">View more</p>
+    </div>
+</section>
+
+
+<section id="Macket">
+    <div class="mackement">
+    <img class="m1" src="img/macket1.png" alt="Macke" />
+    <img class="m2" src="img/macket2.png" alt="Macke2" />
+    </div>
+
+</section>
+
+
+<section id="ShoppingByCategories">
+    <h3 class="ShoppingByCategoriesText">Shop By Categories</h3>
+    <div class="containerCategories">
+
+        <div class="cardss light-peach">
+            <h2 class="titles">Fashion</h2>
+            <img class="madam" src="img/madam.png" alt="Fashion" />
+        </div>
+
+        <div class="cardss light-p">
+            <h2 class="titles">Beauty &
+                Accessories</h2>
+            <img class="cosmetic" src="img/cosmetic.png" alt="Fashion" />
+        </div>
+
+        <div class="cardss light-b">
+            <h2 class="titles2">Electronics</h2>
+            <img class="elec" src="img/elect.png" alt="Fashion" />
+        </div>
+
+         <div class="cardss light-g">
+                <h2 class="titles2">Grocery</h2>
+                <img class="grocery" src="img/grocery.png" alt="Fashion" />
+            </div>
+    </div>
+</section>
+
+<section id="winter">
+    <h3 class="winterText">Winter Essentials</h3>
+
+    <div class="winterprod">
+        <div class="cards b">
+            <div class="rating">4.2</div>
+            <img class="men" src="img/man.png" alt="Product 1" />
+            <div class="info">
+                <p class="sponsored">Roadster</p>
+                <div class="title">
+                    <p>Men Striped Padded Jacket</p>
+                  </div>
+                <p class="price">₹891 </p>
+                <p> <span class="old-price">₹3,999</span> <span class="discount">72% off </span></p>
+            </div>
+        </div>
+
+        <div class="cards p">
+            <div class="rating">3.1</div>
+            <img class="shapca" src="img/shapca.png" alt="Shoes" />
+            <div class="info">
+                <p class="sponsored">PinKit</p>
+                <div class="title">
+                    <p>Solid Beanie (Pack of 2)</p>
+                   </div>
+                <p class="pri">₹265</p>
+                <p><span class="old-pric">₹499</span> <span class="discount">46% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards g">
+            <div class="rating">4.2</div>
+            <img class="boots" src="img/boots.png" alt="Earbuds" />
+            <div class="info">
+                <p class="sponsored">BIG FOX</p>
+                <DIV class="title">
+                <p >Big Fox Anglo-2 Chelsea</p>
+                    <p>Boots For Men (Maroon)</p>
+                </DIV>
+                <p class="pr">₹800</p>
+                <p><span class="old-price">₹2,245</span> <span class="discount">65% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards y">
+            <div class="rating">4.1</div>
+            <img class="hz" src="img/hz.png" alt="Chair" />
+            <div class="info">
+                <p class="sponsored">Heater</p>
+                <div class="title">
+                    <p>HILTON ?HQ-1-800 | ISI Certified |</p>
+                    <p>Multi Mode | Grey Quartz</p>
+                    <p>Room Heater</p></div>
+                <p class="price">₹1,200</p>
+                <p> <span class="old-price">₹1,899 </span> <span class="discount">36% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards dg">
+            <div class="rating">5.1</div>
+            <img class="odiaylo" src="img/odiaylo.png" alt="Flask" />
+            <div class="info">
+                <p class="sponsored">kamble</p>
+                <div class="title">
+                    <p>MAGICAL Floral Double Mink</p>
+                    <p>Blanket for Heavy Winter</p>
+                    <p>(Microfiber, Brown)</p></div>
+                <p class="price">₹479</p>
+                <p> <span class="old-price">₹1,999</span> <span class="discount">76% off</span></p>
+            </div>
+        </div>
+        <div>
+        <p class="view-more">View more</p>
+            <img class="ar" src="img/ar.png" alt="Chairs" />
+        </div>
+    </div>
+</section>
+
+<section id="FLipcartRec">
+
+    <h3 class="FLipcartRecText">Flipkart Recommendation</h3>
+    <div class="recprod">
+        <div class="cards green">
+            <div class="rating">4.2</div>
+            <img class="guitar" src="img/guitar.png" alt="Product 1" />
+            <div class="info">
+                <p class="sponsored">GUITAR</p>
+                <div class="title">
+                    <p>STREE MANTRA Women  Printed</p>
+                    <p>Georgette, Crepe  A-line Kurta </p>
+                    <p>Grey </p>
+                </div>
+                <p class="price">₹920 </p>
+                <p> <span class="old-price">₹1,897</span> <span class="discount">51% off </span></p>
+            </div>
+        </div>
+
+        <div class="cards p">
+            <div class="rating">3.7</div>
+            <img class="watch" src="img/watch.png" alt="Shoes" />
+            <div class="info">
+                <p class="sponsored">LIMESTONE</p>
+                <div class="title">
+                    <p>Bleed Blue Day and Date </p>
+                    <p>Functioning Strap Adult Quartz</p>
+                    <p>Analog Watch - For Men LS2821</p>
+                </div>
+                <p class="pri">₹280</p>
+                <p><span class="old-pric">₹1,999</span> <span class="discount">85% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards g">
+            <div class="rating">4.7</div>
+            <img class="printer" src="img/printer.png" alt="Earbuds" />
+            <div class="info">
+                <p class="sponsored">Canon</p>
+                <DIV class="title">
+                    <p>Canon PIXMA E3370 Multi-function</p>
+                    <p>WiFi Color Inkjet Printer (Borderless</p>
+                    <p>Printing)(Black, Ink Cartridge)</p>
+                </DIV>
+                <p class="pr">₹5,599</p>
+                <p><span class="old-price">₹6,996</span> <span class="discount">19% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards yellow">
+            <div class="rating">4.4</div>
+            <img class="Ketlle" src="img/Ketlle.png" alt="Chair" />
+            <div class="info">
+                <p class="sponsored">Prestige</p>
+                <div class="title">
+                    <p>Prestige PKOSS Electric Kettle</p>
+                    <p>(1.5 L, Silver)</p>
+                  </div>
+                <p class="price">₹699</p>
+                <p> <span class="old-price">₹1,245 </span> <span class="discount">43% off</span></p>
+            </div>
+        </div>
+
+        <div class="cards pp">
+            <div class="rating">5.6</div>
+            <img class="tablet" src="img/tablet.png" alt="Flask" />
+            <div class="info">
+                <p class="sponsored">Apple</p>
+                <div class="title">
+                    <p>Apple iPad (10th Gen) 64 GB</p>
+                    <p>ROM 10.9 inch with Wi-Fi Only</p>
+                    <p>(Silver)</p></div>
+                <p class="price">₹37,499</p>
+                <p> <span class="old-price">₹39,000</span> <span class="discount">6% off</span></p>
+            </div>
+        </div>
+        <div>
+            <p class="view-more">View more</p>
+            <img class="ar" src="img/ar.png" alt="Chairs" />
+        </div>
+    </div>
+
+</section>
+
+<section id="Flip">
+    <div class="banner">
+        <div class="text-content">
+            <div class="textH1">
+                <h1>Flipkart Grocery: <span class="textFlip">Your</span> </h1>
+                <div class="textwhite">
+                <h1>New Go-to Online </h1>
+                <h1>Grocery Store</h1>
+                </div>
+            </div>
+            <div class="textp">
+            <p>Whether you work from home or office or other</p>
+               <p> workplaces, daily items are a requisite foe everybody</p>
+            </div>
+            <button class="button">UP TO 30% OFF</button>
+        </div>
+        <div class="image-content">
+            <img src="img/Ellipse10.png" alt="Grain">
+            <img src="img/Ellipse10.png" alt="Grain">
+            <img src="img/bread.png" alt="Corn">
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>ABOUT</h4>
+            <ul>
+                <li>Contact Us</li>
+                <li>About Us</li>
+                <li>Careers</li>
+                <li>Flipkart Stories</li>
+                <li>Press</li>
+                <li>Flipkart Wholesale</li>
+                <li>Corporate Information</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>HELP</h4>
+            <ul>
+                <li>Payments</li>
+                <li>Shipping</li>
+                <li>Cancellation & Returns</li>
+                <li>FAQ</li>
+                <li>Report Infringement</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>POLICY</h4>
+            <ul>
+                <li>Return Policy</li>
+                <li>Terms Of Use</li>
+                <li>Security</li>
+                <li>Privacy</li>
+                <li>Sitemap</li>
+                <li>EPR Compliance</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>SOCIAL</h4>
+            <ul>
+                <li>Facebook</li>
+                <li>YouTube</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>MAIL Us:</h4>
+            <p>
+                Flipkart Internet Private Limited,<br>
+                Buildings Alyssa, Begonia &<br>
+                Clove Embassy Tech Village,<br>
+                Outer Ring Road,<br>
+                Devarabeesanahalli Village,<br>
+                Bengaluru, 560103,<br>
+                Karnataka, India
+            </p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-line">
+            <span>Become a Seller | Advertise | Gift Cards | Help Center</span>
+            <span>© 2007–2022 Flipkart.com</span>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
